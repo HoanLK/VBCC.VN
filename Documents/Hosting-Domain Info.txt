@@ -1,0 +1,22 @@
+﻿--- Hosting ---
+Website quản trị: https://sdns.vn 
+
+Username: vbcc.vn
+
+Password: @2RHHY6Kb@
+
+--- Domain ---
+Website quản trị: http://vbcc.vn:8880 hoặc 
+http://125.212.221.113:8880 
+
+Username: vbccvn
+
+Password: @xeoHc9pK@
+
+
+Ftp Server: vbcc.vn hoặc 
+125.212.221.113
+
+Username: vbccvn
+
+Password: @xeoHc9pK@

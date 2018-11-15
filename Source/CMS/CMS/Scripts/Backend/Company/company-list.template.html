@@ -1,0 +1,35 @@
+﻿<div ng-controller="companyListController as vm">
+    <!-- PAGE BAR -->
+    <div class="page-bar">
+        <ul class="page-breadcrumb">
+            <li>
+                <a style="font-size: 16px; font-weight: bold;">{{vm.page.title}}</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Main-->
+    <div class="row page-main">
+        <div class="portlet light bordered">
+            <!-- DataGrid Companies -->
+            <div dx-data-grid="vm.gridCompanies" dx-item-alias="item" id="companies">
+                <span us-spinner="{radius:15, width:4, length: 8}"></span>
+                <!-- Template Logo -->
+                <div data-options="dxTemplate:{ name:'logoCellTemplate' }">
+                    <img ng-src="{{item.value}}" class="img-responsive" />
+                </div>
+            </div>
+        </div>
+
+        <!--Popup Delete-->
+        <div class="popup" dx-popup="vm.deletePost.popup">
+            <div data-options="dxTemplate: { name:'templateDeletePost' }">
+                <div style="text-align: center" ng-cloak>{{vm.deletePost.title}}</div>
+                <br />
+                <div class="pull-left" dx-button="{text: 'Có', icon: 'floppy', onClick: vm.ConfirmDelete, type: 'success' }"></div>
+                <div class="pull-right" dx-button="{text: 'Không', icon: 'clear', onClick: vm.CancelDelete, type: 'danger' }"></div>
+                <br />
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,266 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>VBCC - Kết nối doanh nghiệp Việt</title>
+    <meta name="description" content="">
+    <meta name="author" content="FASTUP TECH">
+
+    <!--Font-->
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,700'>
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Patua+One:100,300,400,400italic,700'>
+
+    <!--FontAwsome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <!-- WOWSlider -->
+    @*<link href="~/Content/Frontend/Templates/plugins/wow-slider/scripts/style.css" rel="stylesheet" />*@
+
+    <!--Thumbnail Slider-->
+    @*<link href="~/Content/Frontend/Templates/plugins/thumbnail-slider/ninja-slider.css" rel="stylesheet" />
+        <link href="~/Content/Frontend/Templates/plugins/thumbnail-slider/thumbnail-slider.css" rel="stylesheet" />*@
+
+    <!--CSS-->
+    <link href="~/Content/Frontend/Templates/css/global.css" rel="stylesheet" />
+    <link href="~/Content/Frontend/Templates/css/structure.css" rel="stylesheet" />
+    <link href="~/Content/Frontend/Templates/css/be_style.css" rel="stylesheet" />
+    <link href="~/Content/Frontend/Templates/css/custom.css" rel="stylesheet" />
+
+    <!-- Revolution Slider -->
+    <link href="~/Content/Frontend/Templates/plugins/rs-plugin/css/settings.css" rel="stylesheet" />
+
+    <link href="~/Content/Frontend/css/main.css" rel="stylesheet" />
+    <script src="~/Content/Frontend/js/extention/choices.js"></script>
+    <script>
+        const choices = new Choices('[data-trigger]',
+            {
+                searchEnabled: false,
+                itemSelectText: '',
+            });
+
+    </script>
+
+</head>
+<body class="page-parent template-slider color-blue layout-full-width header-modern subheader-transparent sticky-header sticky-white subheader-title-left">
+    
+
+    <!-- Main Theme Wrapper -->
+    <div id="Wrapper">
+        <!-- Header Wrapper -->
+        <div id="Header_wrapper">
+            <!-- Header -->
+            <header id="Header">
+                <!-- Header Top -  Info Area -->
+                @Html.Action("HeaderTop", "Layout")
+
+                <!-- Header -  Logo and Menu area -->
+                <div id="Top_bar">
+                    <div class="container">
+                        <div class="column one">
+                            <div class="top_bar_left clearfix">
+                                <!-- Logo-->
+                                <div class="logo">
+                                    <a id="logo" href="#" title="Logo VBCC">
+                                        <img class="scale-with-grid" src="~/Content/Frontend/Templates/images/Logo text VBCC png.png" alt="Logo VBCC" title="Logo VBCC"/>
+                                    </a>
+                                </div>
+                                <!-- Main menu-->
+                                @Html.Action("MainMenu", "Layout")
+ 
+                                <!-- Banner area - only for certain pages-->
+                                <div class="banner_wrapper">
+                                    <a href="#" target="_blank">
+                                        <img src="~/Content/Frontend/Templates/images/468x60.gif" />
+                                    </a>
+                                </div>
+                                <!-- Header Searchform area-->
+                                @*<div class="search_wrapper" style="display: block">
+                                    <form method="get" action="#">
+                                        <i class="icon_search icon-search"></i>
+                                        <input type="text" class="field" name="s" placeholder="Tìm kiếm doanh nghiệp ... " style="color: #fff" />
+                                    </form>
+                                </div>*@
+                                <div class="s003">
+                                    <form>
+                                        <div class="inner-form">
+                                            <div class="input-field first-wrap">
+                                                <div class="input-select">
+                                                    <select data-trigger="" name="choices-single-defaul">
+                                                        <option placeholder="">Category</option>
+                                                        <option>New Arrivals</option>
+                                                        <option>Sale</option>
+                                                        <option>Ladies</option>
+                                                        <option>Men</option>
+                                                        <option>Clothing</option>
+                                                        <option>Footwear</option>
+                                                        <option>Accessories</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="input-field second-wrap">
+                                                <input id="search" type="text" placeholder="Enter Keywords?" />
+                                            </div>
+                                            <div class="input-field third-wrap">
+                                                <button class="btn-search" type="button">
+                                                    <svg class="svg-inline--fa fa-search fa-w-16" aria-hidden="true" data-prefix="fas" data-icon="search" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                                        <path fill="currentColor" d="M505 442.7L405.3 343c-4.5-4.5-10.6-7-17-7H372c27.6-35.3 44-79.7 44-128C416 93.1 322.9 0 208 0S0 93.1 0 208s93.1 208 208 208c48.3 0 92.7-16.4 128-44v16.3c0 6.4 2.5 12.5 7 17l99.7 99.7c9.4 9.4 24.6 9.4 33.9 0l28.3-28.3c9.4-9.4 9.4-24.6.1-34zM208 336c-70.7 0-128-57.2-128-128 0-70.7 57.2-128 128-128 70.7 0 128 57.2 128 128 0 70.7-57.2 128-128 128z"></path>
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="top_bar_right">
+                                <div class="top_bar_right_wrapper">
+                                    <!-- Shopping cart icon-->
+                                    <a id="header_cart" href="#"><i class="fas fa-file-signature"></i> Đăng ký</a>
+                                    <a id="header_cart">|</a>
+                                    <a id="header_cart" href="#"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Revolution slider area-->
+                <div class="mfn-main-slider" id="mfn-rev-slider">
+                    @Html.Partial("~/Views/Shared/_MainSlide.cshtml")
+                </div>
+            </header>
+        </div>
+
+        <!-- Main Content -->
+        @RenderBody()
+
+        <!-- Footer-->
+        @Html.Action("Footer", "Layout")
+
+    </div>
+
+    <!--Scripts-->
+    @RenderSection("scripts", required: false)
+
+    <script src="~/Content/Frontend/Templates/js/jquery-2.1.4.min.js"></script>
+    <script src="~/Content/Frontend/Templates/js/ui/jquery-ui.min.js"></script>
+    <script src="~/Content/Frontend/Templates/js/mfn.menu.js"></script>
+    <script src="~/Content/Frontend/Templates/js/jquery.plugins.js"></script>
+    <script src="~/Content/Frontend/Templates/js/jquery.jplayer.min.js"></script>
+    <script src="~/Content/Frontend/Templates/js/animations/animations.js"></script>
+    @*<script src="~/Content/Frontend/Templates/js/email.js"></script>*@
+    <script src="~/Content/Frontend/Templates/js/scripts.js"></script>
+
+    <script src="~/Content/Frontend/Templates/plugins/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Content/Frontend/Templates/plugins/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+
+    <script>
+        var tpj = jQuery;
+        tpj.noConflict();
+        var revapi34;
+        tpj(document).ready(function () {
+            if (tpj("#rev_slider_34_2").revolution == undefined) {
+                revslider_showDoubleJqueryError("#rev_slider_34_2");
+            } else {
+                revapi34 = tpj("#rev_slider_34_2").show().revolution({
+                    sliderType: "standard",
+
+                    sliderLayout: "auto",
+                    dottedOverlay: "none",
+                    delay: 7000,
+                    navigation: {
+                        keyboardNavigation: "off",
+                        keyboard_direction: "horizontal",
+                        mouseScrollNavigation: "off",
+                        onHoverStop: "on",
+                        touch: {
+                            touchenabled: "on",
+                            swipe_threshold: 0.7,
+                            swipe_min_touches: 1,
+                            swipe_direction: "horizontal",
+                            drag_block_vertical: false
+                        },
+                        //arrows: {
+                        //    style: "uranus",
+                        //    enable: true,
+                        //    hide_onmobile: false,
+                        //    hide_onleave: false,
+                        //    tmp: '',
+                        //    left: {
+                        //        h_align: "right",
+                        //        v_align: "bottom",
+                        //        h_offset: 90,
+                        //        v_offset: 40
+                        //    },
+                        //    right: {
+                        //        h_align: "right",
+                        //        v_align: "bottom",
+                        //        h_offset: 40,
+                        //        v_offset: 40
+                        //    }
+                        //},
+                        //thumbnails: {
+                        //    style: "hesperiden",
+                        //    enable: true,
+                        //    width: 200,
+                        //    height: 80,
+                        //    min_width: 100,
+                        //    wrapper_padding: 5,
+                        //    wrapper_color: "transparent",
+                        //    wrapper_opacity: "1",
+                        //    tmp: '<span class="tp-thumb-image"></span><span class="tp-thumb-title">Slide</span>',
+                        //    visibleAmount: 3,
+                        //    hide_onmobile: true,
+                        //    hide_under: 0,
+                        //    hide_onleave: false,
+                        //    direction: "horizontal",
+                        //    span: false,
+                        //    position: "inner",
+                        //    space: 5,
+                        //    h_align: "left",
+                        //    v_align: "bottom",
+                        //    h_offset: 40,
+                        //    v_offset: 40
+                        //}
+                    },
+                    gridwidth: 1180,
+                    gridheight: 650,
+                    lazyType: "none",
+                    shadow: 0,
+                    spinner: "spinner3",
+                    stopLoop: "off",
+                    stopAfterLoops: -1,
+                    stopAtSlide: -1,
+                    shuffle: "off",
+                    autoHeight: "off",
+                    disableProgressBar: "on",
+                    hideThumbsOnMobile: "on",
+                    hideSliderAtLimit: 0,
+                    hideCaptionAtLimit: 0,
+                    hideAllCaptionAtLilmit: 0,
+                    startWithSlide: 0,
+                    debugMode: false,
+                    fallbacks: {
+                        simplifyAll: "on",
+                        nextSlideOnWindowFocus: "off",
+                        disableFocusListener: "off",
+                    }
+                });
+            }
+        });
+    </script>
+
+    <script>
+        jQuery(window).load(function () {
+            var retina = window.devicePixelRatio > 1 ? true : false;
+            if (retina) {
+                var retinaEl = jQuery("#logo img");
+                var retinaLogoW = retinaEl.width();
+                var retinaLogoH = retinaEl.height();
+                retinaEl.attr("src", "/Content/Frontend/Templates/images/Logo text VBCC png.png").width(retinaLogoW).height(retinaLogoH)
+            }
+        });
+    </script>
+
+</body>
+</html>

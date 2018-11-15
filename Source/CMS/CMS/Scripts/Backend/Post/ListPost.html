@@ -1,0 +1,45 @@
+﻿<!-- PAGE BAR -->
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a style="font-size: 16px; font-weight: bold;">{{page.title}}</a>
+        </li>
+    </ul>
+</div>
+
+<!--Main-->
+<div class="row page-main">
+    <div class="portlet light bordered">
+        <!--Grid Post-->
+        <div dx-data-grid="gridPosts" dx-item-alias="item" id="post">
+            <span us-spinner="{radius:15, width:4, length: 8}"></span>
+
+            <!--Template Published-->
+            <div data-options="dxTemplate:{ name:'publishedCellTemplate' }">
+                <span class="fa fa-check text-success" ng-if="item.value"></span>
+                <span class="fa fa-close text-danger" ng-if="!item.value"></span>
+            </div>
+            <!--Template Featured-->
+            <div data-options="dxTemplate:{ name:'featuredCellTemplate' }">
+                <span class="fa fa-check text-success" ng-if="item.value"></span>
+                <span class="fa fa-close text-danger" ng-if="!item.value"></span>
+            </div>
+            <!--Template Views-->
+            <div data-options="dxTemplate:{ name:'viewsCellTemplate' }">
+                <span class="badge badge-primary"> {{item.value}} </span>
+            </div>
+        </div>
+        <div dx-context-menu="contextMenuPost"></div>
+    </div>
+
+    <!--Popup Delete-->
+    <div class="popup" dx-popup="deletePost.popup">
+        <div data-options="dxTemplate: { name:'templateDeletePost' }">
+            <div style="text-align: center" ng-cloak>{{deletePost.title}}</div>
+            <br />
+            <div class="pull-left" dx-button="{ text: 'Có', icon: 'floppy', onClick: ConfirmDelete, type: 'success' }"></div>
+            <div class="pull-right" dx-button="{ text: 'Không', icon: 'clear', onClick: CancelDelete, type: 'danger' }"></div>
+            <br />
+        </div>
+    </div>
+</div>

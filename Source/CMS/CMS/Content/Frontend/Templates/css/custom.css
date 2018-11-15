@@ -1,0 +1,26 @@
+#menu > ul > li > a {
+    font-size: 15px;
+}
+
+#Top_bar .search_wrapper input[type="text"]::placeholder {
+    color: #fff;
+    font-style:italic;
+}
+
+#Top_bar .search_wrapper input[type="text"] {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+#Top_bar a#header_cart {
+    font-size: 16px;
+}
+
+.flv_rev_3 {
+    color: #000000;
+    font-weight: 300 !important;
+}
+
+.text-logo #logo, h1, h2, h3, h4 {
+    font-family: Tahoma,sans-serif;
+    font-weight: 300;
+}
